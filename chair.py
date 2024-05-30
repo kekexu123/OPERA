@@ -23,7 +23,9 @@ import tqdm
 import pickle
 from collections import defaultdict
 
-
+# nltk.download('punkt')
+# nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
 # copied from: https://github.com/LisaAnne/Hallucination/blob/master/data/synonyms.txt
 synonyms_txt = '''
 person, girl, boy, man, woman, kid, child, chef, baker, people, adult, rider, children, baby, worker, passenger, sister, biker, policeman, cop, officer, lady, cowboy, bride, groom, male, female, guy, traveler, mother, father, gentleman, pitcher, player, skier, snowboarder, skater, skateboarder, person, woman, guy, foreigner, child, gentleman, caller, offender, coworker, trespasser, patient, politician, soldier, grandchild, serviceman, walker, drinker, doctor, bicyclist, thief, buyer, teenager, student, camper, driver, solider, hunter, shopper, villager

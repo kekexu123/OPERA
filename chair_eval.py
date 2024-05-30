@@ -123,7 +123,10 @@ norm = transforms.Normalize(mean, std)
 img_files = os.listdir(args.data_path)
 random.shuffle(img_files)
 
-with open(args.data_path + '../annotations_trainval2014/annotations/instances_val2014.json', 'r') as f:
+annotations_path = args.data_path.replace(args.data_path.split('/')[-1], 'annotations/instances_val2014.json')
+
+# with open(args.data_path + '../annotations_trainval2014/annotations/instances_val2014.json', 'r') as f:
+with open(annotations_path, 'r') as f:
     lines = f.readlines()
 coco_anns = json.loads(lines[0])
 
@@ -158,7 +161,7 @@ for img_id in tqdm(range(len(img_files))):
     img_save = {}
     img_save["image_id"] = img_id
 
-    image_path = args.data_path + img_file
+    image_path = args.data_path + '/' + img_file
     raw_image = Image.open(image_path).convert("RGB")
     image = vis_processors["eval"](raw_image).unsqueeze(0)
     image = image.to(device)

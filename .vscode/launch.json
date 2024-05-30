@@ -1,0 +1,47 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python 调试程序: 当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "chair_eval",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "chair_eval.py",
+            "console": "integratedTerminal",
+            "python": "/home/kekexu/anaconda3/envs/opera/bin/python",
+            "args": [
+                "--model", "llava-1.5",
+                "--data_path", "data/coco/val2014",
+                "--gpu-id", "4",
+                "--beam", "2",
+                "--scale_factor", "50",
+                "--threshold", "15",
+                "--num_attn_candidates", "2",
+                "--penalty_weights", "1",
+            ]
+        },
+        {
+            "name": "get_gpt4o",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "gpt4o_eval.py",
+            "console": "integratedTerminal",
+            "python": "/home/kekexu/anaconda3/envs/opera/bin/python",
+            "args": [
+                "--model", "gpt4-o",
+                "--data_path", "data/coco/val2014",
+                "--gpu-id", "5"
+            ]
+        }
+
+    ]
+}
